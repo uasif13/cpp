@@ -42,16 +42,17 @@ class Square: public Rectangle{
         int area() {
             return Rectangle::area();
         };
-        int perimemter() {
+        int perimeter() {
             return Rectangle::perimeter();
         }
-};
+} d;
 
 int main(){
     Rectangle a (4,5);
     Square b (3);
     Shape * c = &a;
-    cout << c ->area() << endl;
-    cout << (*c).area() << endl;
+    cout << c ->area() << endl; //Returns 20
+    c = &b;
+    cout << (*c).area() << endl; //Returns 9
     return 0;
 }
